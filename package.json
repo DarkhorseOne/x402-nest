@@ -10,7 +10,8 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "echo \"No tests implemented yet\""
+    "test": "NODE_OPTIONS=\"--require ./disable-console-ninja.js\" jest --runInBand",
+    "test:watch": "NODE_OPTIONS=\"--require ./disable-console-ninja.js\" jest --watch"
   },
   "license": "MIT",
   "peerDependencies": {
@@ -30,5 +31,14 @@
   },
   "dependencies": {
     "@darkhorseone/x402-core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/platform-express": "^11.1.9",
+    "@nestjs/platform-fastify": "^11.1.9",
+    "@nestjs/testing": "^11.1.9",
+    "@types/jest": "^30.0.0",
+    "fastify": "^5.6.2",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6"
   }
 }
